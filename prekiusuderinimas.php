@@ -1,9 +1,9 @@
 <?php 
-class prekiusuerinanumas extends Module
+class prekiusuderinimas extends Module
 {
   public function __construct()
   {
-    $this->name = 'prekiusuerinanumas';
+    $this->name = 'prekiusuderinimas';
     $this->tab = 'front_office_features';
     $this->version = '1.0.0';
     $this->author = 'Tadas Budrys';
@@ -14,12 +14,12 @@ class prekiusuerinanumas extends Module
  
     parent::__construct();
  
-    $this->displayName = $this->l('prekiusuerinanumas');
+    $this->displayName = $this->l('prekiusuderinimas');
     $this->description = $this->l('Description of my module.');
  
     $this->confirmUninstall = $this->l('Are you sure you want to uninstall?');
  
-    if (!Configuration::get('prekiusuerinanumas')) {
+    if (!Configuration::get('prekiusuderinimas')) {
       $this->warning = $this->l('No name provided');
     }
   }
@@ -85,7 +85,7 @@ public function  installModuleTab ()
     $langs = Language::getLanguage();
     $tab->name = array();
     foreach (Language::getLanguages(true) as $lang) {
-        $tab->name[$lang['id_lang']] = 'prekiusuerinanumas';
+        $tab->name[$lang['id_lang']] = 'prekiusuderinimas';
     }
     $tab->module = $this->name;
     $tab->active = 1;
